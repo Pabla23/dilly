@@ -1,11 +1,18 @@
 .site-header {
 	background-color: #111;
 	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	a {
+		color: #fff;
+	}
 }
 
-.site-header a {
-	color: #fff;
-}
 
 .site-branding {
 	padding: 1rem;

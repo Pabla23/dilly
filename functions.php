@@ -46,10 +46,18 @@ function dilly_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// Nav Menus
+
+	//register primary nav
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'dilly' ),
+		)
+	);
+	//register footer nav
+	register_nav_menus(
+		array(
+			'footer-nav' => esc_html__( 'Footer', 'dilly' ),
 		)
 	);
 
@@ -175,4 +183,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

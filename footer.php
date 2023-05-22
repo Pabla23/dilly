@@ -13,18 +13,18 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dilly' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'dilly' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'dilly' ), 'dilly', '<a href="https://dillyp.com/">Dilraj Pabla</a>' );
-				?>
+			<h3>Credits</h3>
+			<?php
+			/* translators: 1: Theme name, 2: Theme author. */
+			printf( esc_html__( 'Theme: %1$s by %2$s.', 'dilly' ), 'dilly', '<a href="https://dillyp.com/">Dilraj Pabla</a>' );
+			?>
 		</div><!-- .site-info -->
+		<div class="footer-nav">
+			<h3>Links</h3>
+			<?php
+				wp_nav_menu(array("theme_location" => "footer-nav"));
+			?>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

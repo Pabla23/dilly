@@ -21,3 +21,12 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.site-main {
+	padding: 5rem 2rem;
+}
+
+.site {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}

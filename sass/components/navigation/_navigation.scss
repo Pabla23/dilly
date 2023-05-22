@@ -1,12 +1,20 @@
 .main-navigation {
-	display: block;
-	width: 100%;
+	padding-right: 1rem;
+
+	.menu-main-menu-container {
+		background-color: #111;
+		position: absolute;
+		top: 4.5rem;
+		left: 0;
+		right: 0;
+	}
 
 	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		text-align: center;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -51,6 +59,9 @@
 
 	li {
 		position: relative;
+		padding: 0.5rem;
+		text-transform: uppercase;
+		font-size: 1.1rem;
 
 		&:hover > a,
 		&.focus > a {
@@ -73,6 +84,16 @@
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+
+.menu-toggle {
+	background: none;
+	border: 0;
+	svg {
+		height: 2.5rem;
+		width: 2.5rem;
+		fill: #fff;
+	}
 }
 
 @media screen and (min-width: 37.5em) {
