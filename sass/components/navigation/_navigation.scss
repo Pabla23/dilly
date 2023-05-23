@@ -4,7 +4,7 @@
 	.menu-main-menu-container {
 		background-color: #111;
 		position: absolute;
-		top: 4.5rem;
+		top: 3.5rem;
 		left: 0;
 		right: 0;
 	}
@@ -59,12 +59,13 @@
 
 	li {
 		position: relative;
-		padding: 0.5rem;
+		padding: 1rem;
 		text-transform: uppercase;
 		font-size: 1.1rem;
 
-		&:hover > a,
-		&.focus > a {
+		&:hover,
+		&.focus {
+			background-color: #305c9f;
 		}
 	}
 
@@ -74,9 +75,10 @@
 	}
 
 	.current_page_item > a,
-	.current-menu-item > a,
+	.current-menu-item,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		background-color: #305c9f;
 	}
 }
 
@@ -102,8 +104,15 @@
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
+	.main-navigation {
+		.menu-main-menu-container {
+			position: relative;
+			top: 0;
+			background-color: transparent;
+		}
+		ul {
+			display: flex;
+		}
 	}
 }
 

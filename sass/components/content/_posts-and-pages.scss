@@ -15,6 +15,10 @@
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	p {
+		max-width: 60rem;
+		margin: 0 auto;
+	}
 }
 
 .page-links {
@@ -24,6 +28,8 @@
 
 .site-main {
 	padding: 5rem 2rem;
+	width: 62rem;
+	margin: 0 auto;
 }
 
 .site {

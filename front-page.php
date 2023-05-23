@@ -31,6 +31,31 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+		<section>
+			<h2>Recent News</h2>
+			<?php
+			$args = array(
+				'post_type' => 'post',
+				'posts_per_page' => 3,
+			);
+			$query = new WP_Query( $args );
+			?>
+			<?php if ( $query->have_posts() ) : ?>
+				<div class="news">
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+						<div class="news-item">
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail( 'medium' ); ?>
+								<h3><?php the_title(); ?></h3>
+							</a>
+						</div>
+					<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
+			<!-- add a link to see all news -->
+			<a href="<?php echo esc_url(get_post_type_archive_link( 'post' )); ?>">See all news</a>
+		</section>
+
 	</main><!-- #main -->
 
 <?php
