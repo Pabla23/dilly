@@ -2,7 +2,7 @@
 	background-color: #111;
 	color: #fff;
 	text-align: center;
-	padding: 1.25rem;
+	padding: 2rem 2rem 6rem 2rem;
 	margin-top: 1rem;
 	position: relative;
 	bottom: -2rem;
@@ -12,16 +12,20 @@
 	color: #fff;
 }
 
+.footer-nav {
+	text-align: center;
+}
+
 .site-footer a:hover,
 .site-footer a:focus,
 .site-footer a:active {
-	color: #fff200;
+	color: $color__link-hover;
 }
 
 .site-footer a:hover path,
 .site-footer a:focus path,
 .site-footer a:active path {
-	fill: #fff200;
+	fill: $color__link-hover;
 }
 
 .menu-footer-menu-container {
@@ -44,7 +48,9 @@
 	.site-footer {
 		text-align: left;
 		display: grid;
-		grid-template-columns: minmax(auto, 62.5rem);
+		grid-template-columns: minmax(auto, 31rem) minmax(auto, 31rem);
 		justify-content: center;
+		align-items: baseline;
+		justify-items: stretch;
 	}
 }

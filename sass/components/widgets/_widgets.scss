@@ -1,8 +1,45 @@
 .widget {
 	margin: 0 0 1.5em;
-
 	// Make sure select elements fit in widgets.
 	select {
 		max-width: 100%;
+	}
+}
+
+.widget-area {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.widget_search {
+	margin-top: 1.5rem;
+}
+
+@media (min-width: 50em) {
+	.widget {
+		max-width: 15rem;
+		padding: 0 1rem;
+		ul {
+			margin-left: 0;
+		}
+	}
+	.widget-area {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.wp-block-search__inside-wrapper {
+		flex-wrap: wrap;
+		button {
+			margin-top: 1rem;
+			width: 100%;
+			margin-left: 0;
+			&:hover,
+			 :focus{
+				background-color: $color__link-hover;
+				color: white;
+			}
+		}
 	}
 }

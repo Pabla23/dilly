@@ -157,6 +157,15 @@ function dilly_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'dilly_scripts' );
 
+function dilly_aos_enqueue() {
+	if(is_home()) :
+		wp_enqueue_style('aos', get_template_directory_uri() . '/aos/aos.css');
+		wp_enqueue_script('aos', get_template_directory_uri() . '/js/aos.js', array('jquery'), '1.2.1', true);
+		wp_add_inline_script('aos', 'AOS.init();');
+	endif;
+}
+add_action('wp_enqueue_scripts', 'dilly_aos_enqueue');
+
 /**
  * Implement the Custom Header feature.
  */
@@ -183,3 +192,16 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// change excerpt length
+function dilly_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'dilly_excerpt_length', 999, 1 );
+
+// change excerpt more to a link to the post
+function dilly_excerpt_more( $more ) {
+	$more = '... <a class="read-more" href="' . esc_url(get_permalink()) . '">' . __( 'Continue Reading', 'fwd' ) . '</a>';
+	return $more;
+}
+add_filter( 'excerpt_more', 'dilly_excerpt_more' );
