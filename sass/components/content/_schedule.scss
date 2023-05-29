@@ -1,0 +1,22 @@
+.schedule {
+    width: 100%;
+    border-collapse: collapse;
+  
+    tr {
+      &:nth-child(even) {
+        background-color: #ececec;
+      }
+  
+      td {
+        padding: 1rem;
+        border: 2px solid #000;
+        font-weight: normal;
+      }
+
+      &:first-child {
+        td {
+            font-weight: bold;
+        }
+      }
+    }
+  }

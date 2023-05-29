@@ -466,6 +466,7 @@ big {
 --------------------------------------------- */
 body {
 	background: #fff;
+	overflow-x: hidden;
 }
 
 hr {
@@ -666,6 +667,7 @@ textarea {
 		text-align: center;
 	}
 	.site-header {
+		overflow: hidden;
 		display: grid;
 		grid-template-columns: 1fr minmax(auto, 25rem) minmax(auto, 37.5rem) 1fr;
 		justify-content: center;
@@ -753,7 +755,7 @@ textarea {
 	fill: #fff;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 40em) {
 	.menu-toggle {
 		display: none;
 	}
@@ -846,6 +848,22 @@ textarea {
 		justify-content: space-around;
 	}
 }
+.schedule {
+	width: 100%;
+	border-collapse: collapse;
+}
+.schedule tr:nth-child(even) {
+	background-color: #ececec;
+}
+.schedule tr td {
+	padding: 1rem;
+	border: 2px solid #000;
+	font-weight: normal;
+}
+.schedule tr:first-child td {
+	font-weight: bold;
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -941,6 +959,7 @@ textarea {
 		margin-left: 0;
 	}
 	.widget-area {
+		max-width: 65rem;
 		display: flex;
 		justify-content: space-between;
 	}
