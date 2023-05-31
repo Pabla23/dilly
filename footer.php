@@ -12,6 +12,17 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<?php
+			// display logo acf field and have the logo link to the home page
+			if( function_exists('get_field')):
+				if (get_field('logo', 2)) :
+					$logo = get_field('logo', 2); ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
+						<img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+					</a>
+				<?php endif;
+			endif;
+		?>
 		<div class="site-info">
 			<h3>Credits</h3>
 			<?php

@@ -29,7 +29,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php dilly_post_thumbnail(); ?>
+	<?php the_post_thumbnail('news'); ?>
 
 	<div class="entry-content">
 		<?php

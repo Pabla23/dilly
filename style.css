@@ -392,7 +392,7 @@ textarea {
 	color: #404040;
 	font-family: "Open Sans", sans-serif;
 	font-size: 1rem;
-	line-height: 1.5;
+	line-height: 1.65;
 }
 
 h1,
@@ -648,11 +648,12 @@ textarea {
 }
 
 .site-branding {
-	padding: 0.5rem 1rem 0 1rem;
+	padding: 0.2rem 1rem;
 	height: 3.5rem;
 }
 
 .site-title {
+	height: 3.5rem;
 	font-size: 1.875rem;
 	margin: 0;
 	text-transform: uppercase;
@@ -680,7 +681,7 @@ textarea {
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
-	padding-left: 6rem;
+	padding-left: 4rem;
 }
 .main-navigation .menu-main-menu-container {
 	background-color: #111;
@@ -697,23 +698,23 @@ textarea {
 	text-align: center;
 }
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+	background-color: grey;
+	position: relative;
+	width: 100vw;
+	z-index: 9999999;
+	text-align: center;
 }
 .main-navigation ul ul ul {
 	left: -999em;
 	top: 0;
 }
-.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
+.main-navigation ul ul li {
+	left: -0.6rem;
+	right: 0;
 }
 .main-navigation ul ul a {
-	width: 200px;
+	width: 100%;
+	padding: 1rem 0;
 }
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
@@ -721,7 +722,6 @@ textarea {
 }
 .main-navigation li {
 	position: relative;
-	padding: 1rem;
 	text-transform: uppercase;
 	font-size: 1.1rem;
 }
@@ -731,6 +731,7 @@ textarea {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	padding: 1rem;
 }
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item,
@@ -766,6 +767,20 @@ textarea {
 	}
 	.main-navigation ul {
 		display: flex;
+	}
+	.main-navigation ul ul {
+		background-color: #111;
+		position: fixed;
+		top: 5.6rem;
+		left: -999rem;
+		max-width: 15rem;
+		flex-direction: column;
+	}
+	.main-navigation ul ul li {
+		left: 0;
+		text-align: left;
+		padding-left: 1.5rem;
+		font-size: 0.95rem;
 	}
 }
 .site-main .comment-navigation,
@@ -891,7 +906,12 @@ textarea {
 }
 
 .footer-nav {
+	margin-top: 1.9rem;
 	text-align: center;
+}
+.footer-nav h3 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
 }
 
 .site-footer a:hover,
@@ -920,14 +940,25 @@ textarea {
 	text-align: center;
 	margin-top: 2rem;
 }
+.site-info h3 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.logo {
+	max-width: 290px;
+}
+.logo img {
+	max-width: 290px;
+}
 
 @media screen and (min-width: 43.75em) {
 	.site-footer {
 		text-align: left;
 		display: grid;
-		grid-template-columns: minmax(auto, 31rem) minmax(auto, 31rem);
+		grid-template-columns: minmax(auto, 20rem) minmax(auto, 19rem) minmax(auto, 19rem);
 		justify-content: center;
-		align-items: baseline;
+		align-items: start;
 		justify-items: stretch;
 	}
 }
@@ -950,16 +981,20 @@ textarea {
 	margin-top: 1.5rem;
 }
 
-@media (min-width: 50em) {
+.wp-block-calendar {
+	max-width: 400px;
+}
+
+@media (min-width: 60em) {
 	.widget {
-		max-width: 15rem;
+		max-width: 18rem;
 		padding: 0 1rem;
 	}
 	.widget ul {
 		margin-left: 0;
 	}
 	.widget-area {
-		max-width: 65rem;
+		max-width: 68rem;
 		display: flex;
 		justify-content: space-between;
 	}

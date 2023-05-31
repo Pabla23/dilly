@@ -1,5 +1,5 @@
 .main-navigation {
-	padding-left: 6rem;
+	padding-left: 4rem;
 
 	.menu-main-menu-container {
 		background-color: #111;
@@ -17,12 +17,11 @@
 		text-align: center;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
+			background-color: grey;
+			position: relative;
+			width: 100vw;
+			z-index: 9999999;
+			text-align: center;
 
 			ul {
 				left: -999em;
@@ -30,16 +29,13 @@
 			}
 
 			li {
-
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
+				left: -0.6rem;
+				right: 0;
 			}
 
 			a {
-				width: 200px;
+				width: 100%;
+				padding: 1rem 0;
 			}
 
 			:hover > a,
@@ -59,7 +55,6 @@
 
 	li {
 		position: relative;
-		padding: 1rem;
 		text-transform: uppercase;
 		font-size: 1.1rem;
 
@@ -72,6 +67,7 @@
 	a {
 		display: block;
 		text-decoration: none;
+		padding: 1rem;
 	}
 
 	.current_page_item > a,
@@ -112,6 +108,20 @@
 		}
 		ul {
 			display: flex;
+			ul {
+				background-color: #111;
+				position: fixed;
+				top: 5.6rem;
+				left: -999rem;
+				max-width: 15rem;
+				flex-direction: column;
+				li {
+					left: 0;
+					text-align: left;
+					padding-left: 1.5rem;
+					font-size: 0.95rem;
+				}
+			}
 		}
 	}
 }

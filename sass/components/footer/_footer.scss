@@ -13,7 +13,12 @@
 }
 
 .footer-nav {
+	margin-top: 1.9rem;
 	text-align: center;
+	h3 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
 }
 
 .site-footer a:hover,
@@ -41,6 +46,17 @@
 .site-info {
 	text-align: center;
 	margin-top: 2rem;
+	h3 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.logo {
+	max-width: 290px;
+	img {
+		max-width: 290px;
+	}
 }
 
 @media screen and (min-width: 43.75em) {
@@ -48,9 +64,9 @@
 	.site-footer {
 		text-align: left;
 		display: grid;
-		grid-template-columns: minmax(auto, 31rem) minmax(auto, 31rem);
+		grid-template-columns: minmax(auto, 20rem) minmax(auto, 19rem) minmax(auto, 19rem);
 		justify-content: center;
-		align-items: baseline;
+		align-items: start;
 		justify-items: stretch;
 	}
 }

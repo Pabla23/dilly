@@ -16,16 +16,20 @@
 	margin-top: 1.5rem;
 }
 
-@media (min-width: 50em) {
+.wp-block-calendar {
+	max-width: 400px;
+}
+
+@media (min-width: 60em) {
 	.widget {
-		max-width: 15rem;
+		max-width: 18rem;
 		padding: 0 1rem;
 		ul {
 			margin-left: 0;
 		}
 	}
 	.widget-area {
-		max-width: 65rem;
+		max-width: 68rem;
 		display: flex;
 		justify-content: space-between;
 	}

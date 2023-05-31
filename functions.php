@@ -201,14 +201,25 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 // change excerpt length
 function dilly_excerpt_length( $length ) {
-	return 20;
+	if(is_archive('students')) :
+		return 25;
+	else :
+		return 20;
+	endif;
 }
 add_filter( 'excerpt_length', 'dilly_excerpt_length', 999, 1 );
 
 // change excerpt more to a link to the post
 function dilly_excerpt_more( $more ) {
-	$more = '... <a class="read-more" href="' . esc_url(get_permalink()) . '">' . __( 'Continue Reading', 'fwd' ) . '</a>';
-	return $more;
+	if(is_archive('students')) :
+		$more = '<a  class="read-more" 
+					 href="' . esc_url(get_permalink()) . '">
+					 ' . __( 'Read More about the student...', 'dilly' ) . ' 
+				 </a>';
+		return $more;
+	else :
+		return ' [...]';
+	endif;
 }
 add_filter( 'excerpt_more', 'dilly_excerpt_more' );
 
@@ -223,3 +234,11 @@ function dilly_staff_page_template($template) {
     return $template;
 }
 add_filter('page_template', 'dilly_staff_page_template');
+
+//remove prefix from all archive titles
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+// Add custom image sizes
+add_image_size( 'portrait-student', 200, 300, true );
+add_image_size( 'students', 300, 200, true );
+add_image_size( 'news', 960, 400, true );
