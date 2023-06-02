@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying student archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -29,17 +29,19 @@ get_header();
 
 			if ( $query->have_posts() ) : ?>
 
-				<div class="student-container">
-					<?php while ( $query->have_posts() ) :
-						$query->the_post(); ?>
-						<h2 class="entry-title">
-							<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-						</h2>
-						<?php the_post_thumbnail('students'); ?>
-						<?php the_excerpt(); ?>
-						<?php the_terms( $post->ID, 'dilly-student-category', 'Area of expertise: '); ?>
+				<section class="student-container">
+					<?php while ( $query->have_posts() ) : ?>
+						<article class="student">
+							<?php $query->the_post(); ?>
+							<h2 class="entry-title">
+								<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+							</h2>
+							<?php the_post_thumbnail('students'); ?>
+							<?php the_excerpt(); ?>
+							<?php the_terms( $post->ID, 'dilly-student-category', 'Area of expertise: '); ?>
+						</article>
 					<?php endwhile; ?>
-				</div>
+					</section>
 				<?php wp_reset_postdata(); 
 			endif; ?>
 

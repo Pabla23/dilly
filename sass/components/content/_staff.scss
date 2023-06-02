@@ -1,0 +1,40 @@
+.faculty-member {
+    margin-bottom: 3rem;
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.administrative-member {
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 50em) {
+    .administrative {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        h2 {
+            width: 100%;
+        }
+
+        .administrative-member {
+            width: 48%;
+        }
+    }
+
+    .faculty {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        h2 {
+            width: 100%;
+        }
+
+        .faculty-member {
+            width: 48%;
+        }
+    }
+}

@@ -223,18 +223,6 @@ function dilly_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'dilly_excerpt_more' );
 
-// enable custom page templates
-function dilly_staff_page_template($template) {
-    if (is_page('staff')) {
-        $new_template = get_template_directory() . '/page-staff.php';
-        if (file_exists($new_template)) {
-            return $new_template;
-        }
-    }
-    return $template;
-}
-add_filter('page_template', 'dilly_staff_page_template');
-
 //remove prefix from all archive titles
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 

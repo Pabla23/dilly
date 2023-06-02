@@ -1,0 +1,15 @@
+.post {
+    margin-bottom: 4rem;
+    img {
+        min-height: 300px;
+        max-height: 400px;
+        object-fit: cover;
+    }
+    .entry-content {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.cat-links, .tags-links, .comments-links {
+    display: block;
+}

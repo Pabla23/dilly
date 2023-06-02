@@ -49,13 +49,14 @@ get_header();
 						<?php
 							if ( function_exists('get_field')) :
 								if ( get_field('staff_info') ) :
-									echo get_field('staff_info');
+									echo esc_html(get_field('staff_info'));
 								endif;
 								if ( get_field('staff_courses') ) :
-									echo get_field('staff_courses');
+									echo esc_html(get_field('staff_courses'));
 								endif;
 								if ( get_field('staff_link') ) :
-									echo get_field('staff_link');
+									$staffLink = get_field('staff_link');
+									echo '<a href="' . esc_url($staffLink['url']) . '" target="' . esc_attr($staffLink['target']) . '">' . esc_html($staffLink['title']) . '</a>';
 								endif;
 							endif;
 						?>
@@ -88,14 +89,16 @@ get_header();
 						<?php
 							if ( function_exists('get_field')) :
 								if ( get_field('staff_info') ) :
-									echo get_field('staff_info');
+									echo '<p>' .esc_html(get_field('staff_info')). '</p>';
 								endif;
 								if ( get_field('staff_courses') ) :
-									echo get_field('staff_courses');
+									echo '<br/>';
+									echo esc_html(get_field('staff_courses'));
 								endif;
 								if ( get_field('staff_link') ) :
 									$staffLink = get_field('staff_link');
-									echo '<a href="' . $staffLink['url'] . '" target="' . $staffLink['target'] . '">' . $staffLink['title'] . '</a>';
+									echo '<br/>';
+									echo '<a href="' . esc_url($staffLink['url']) . '" target="' . esc_attr($staffLink['target']) . '">' . esc_html($staffLink['title']) . '</a>';
 								endif;
 							endif;
 						?>

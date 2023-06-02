@@ -18,16 +18,27 @@ get_header();
 				<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 			</header><!-- .page-header -->
 
+			<section class="taxonomy-students">
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
+					?>
+					<article class="single-taxonomy-student">
+						<?php
+						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+						the_post_thumbnail('portrait-student'); ?>
+						<div class="single-student-content">
+							<?php the_content(); ?>
+						</div>
+					</article>
+					<?php
+				endwhile;
+				?>
+
+			</section>
+
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				the_post_thumbnail('portrait-student');
-				the_content();
-
-			endwhile;
 
 			the_posts_navigation();
 
