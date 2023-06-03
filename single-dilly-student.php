@@ -18,7 +18,7 @@ get_header();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
-			//display links to the other posts in the same taxonomy term (* Look for a WordPress function that lets you “retrieve the terms of the taxonomy that are attached to the post” and use WP_Query() within that loop.)
+			//display links to the other posts in the same taxonomy term
 			$terms = get_the_terms( $post->ID, 'dilly-student-category' );
 
 			if ($terms && !is_wp_error( $terms )) :

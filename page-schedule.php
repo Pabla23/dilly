@@ -25,7 +25,7 @@ get_header();
 
 		endwhile; // End of the loop.
 
-		//display acf repeater field to display schedule as a table.. acf slugs are date, course, instructor
+		//display acf repeater field to display schedule as a table.. 
 		if ( function_exists('get_field')) :
 			$repeater = get_field('course_schedule');
 			if ( $repeater ) :
