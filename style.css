@@ -808,8 +808,9 @@ textarea {
 	text-align: end;
 	flex: 1 0 50%;
 }
-
-.logged-in .sub-menu {
+.comment-navigation .logged-in .sub-menu,
+.posts-navigation .logged-in .sub-menu,
+.post-navigation .logged-in .sub-menu {
 	top: 5.8rem;
 }
 
