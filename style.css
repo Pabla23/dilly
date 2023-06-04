@@ -758,6 +758,9 @@ textarea {
 }
 
 @media screen and (min-width: 48em) {
+	.logged-in .sub-menu {
+		top: 5.8rem;
+	}
 	.menu-toggle {
 		display: none;
 	}
@@ -807,11 +810,6 @@ textarea {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
-}
-.comment-navigation .logged-in .sub-menu,
-.posts-navigation .logged-in .sub-menu,
-.post-navigation .logged-in .sub-menu {
-	top: 5.8rem;
 }
 
 /* Posts and pages
