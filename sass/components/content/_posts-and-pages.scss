@@ -2,19 +2,32 @@
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
 	display: none;
+}
+
+.site {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: minmax(2rem, 1fr) minmax(0, 65rem) minmax(2rem, 1fr);
+	overflow: hidden;
+}
+
+.skip-link {
+	grid-column: 2;
+}
+
+.site-main {
+	grid-column: 2;
+	padding-top: 5rem;
+	max-width: 60rem;
+	margin: 0 auto;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 4rem;
+	margin: 1.5rem 0 4rem;
 	p {
 		max-width: 60rem;
 		margin: 0 auto;

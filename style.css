@@ -432,7 +432,7 @@ address {
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", courier, monospace;
-	line-height: 1.6;
+	line-height: 1.5;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -628,12 +628,14 @@ textarea {
 /* Header
 --------------------------------------------- */
 .site-header {
+	grid-column: 2;
 	background-color: #111;
 	color: #fff;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	position: fixed;
+	padding: 0 1rem;
 	right: 0;
 	left: 0;
 	top: 0;
@@ -649,7 +651,7 @@ textarea {
 }
 
 .site-branding {
-	padding: 0.2rem 1rem;
+	padding: 0.2rem 0;
 	height: 3.5rem;
 }
 
@@ -681,9 +683,6 @@ textarea {
 }
 /* Navigation
 --------------------------------------------- */
-.main-navigation {
-	padding-left: 4rem;
-}
 .main-navigation .menu-main-menu-container {
 	background-color: #111;
 	position: absolute;
@@ -701,7 +700,7 @@ textarea {
 .main-navigation ul ul {
 	background-color: grey;
 	position: relative;
-	width: 100vw;
+	width: 100%;
 	z-index: 9999999;
 	text-align: center;
 }
@@ -750,6 +749,7 @@ textarea {
 .menu-toggle {
 	background: none;
 	border: 0;
+	padding: 0.6em 0 0.4em;
 }
 .menu-toggle svg {
 	height: 2.5rem;
@@ -757,9 +757,12 @@ textarea {
 	fill: #fff;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 48em) {
 	.menu-toggle {
 		display: none;
+	}
+	.main-navigation {
+		padding-left: 6rem;
 	}
 	.main-navigation .menu-main-menu-container {
 		position: relative;
@@ -816,19 +819,32 @@ textarea {
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
 	display: none;
+}
+
+.site {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: minmax(2rem, 1fr) minmax(0, 65rem) minmax(2rem, 1fr);
+	overflow: hidden;
+}
+
+.skip-link {
+	grid-column: 2;
+}
+
+.site-main {
+	grid-column: 2;
+	padding-top: 5rem;
+	max-width: 60rem;
+	margin: 0 auto;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 4rem;
+	margin: 1.5rem 0 4rem;
 }
 .page-content p,
 .entry-content p,
@@ -850,7 +866,7 @@ textarea {
 	background-color: #ececec;
 }
 .schedule tr td {
-	padding: 1rem;
+	padding: 0.4rem;
 	border: 2px solid #000;
 	font-weight: normal;
 }
@@ -858,6 +874,11 @@ textarea {
 	font-weight: bold;
 }
 
+@media (min-width: 500px) {
+	.schedule tr td {
+		padding: 1rem;
+	}
+}
 .news-item {
 	max-width: 300px;
 	margin: 0 auto;
@@ -865,17 +886,6 @@ textarea {
 .news-item h3 {
 	font-size: 1.25rem;
 	margin-top: 0;
-}
-
-.site-main {
-	padding: 5rem 2rem 0;
-	max-width: 62rem;
-	margin: 0 auto;
-}
-
-.site {
-	display: grid;
-	grid-template-rows: auto 1fr auto;
 }
 
 .wp-container-3 {
@@ -889,8 +899,8 @@ textarea {
 	}
 }
 .student {
-	width: 300px;
-	margin-bottom: 2.5rem;
+	max-width: 300px;
+	margin: 0 auto 2.5rem;
 }
 
 @media (min-width: 50em) {
@@ -1001,6 +1011,17 @@ textarea {
 	display: block;
 }
 
+.type-post {
+	max-width: 256px;
+	margin: 0 auto;
+	margin-bottom: 4rem;
+}
+
+@media (min-width: 500px) {
+	.type-post {
+		max-width: 100%;
+	}
+}
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1014,13 +1035,12 @@ textarea {
 /* Footer
 --------------------------------------------- */
 .site-footer {
+	grid-column: 1/4;
 	background-color: #111;
 	color: #fff;
 	text-align: center;
 	padding: 2rem 2rem 6rem 2rem;
-	margin-top: 1rem;
-	position: relative;
-	bottom: -2rem;
+	margin-top: 3rem;
 }
 
 .site-footer a {
@@ -1094,6 +1114,7 @@ textarea {
 }
 
 .widget-area {
+	grid-column: 2;
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 2rem;

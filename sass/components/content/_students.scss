@@ -1,7 +1,7 @@
 //styles for students, designer students, developer students, and single student pages
 .student {
-    width: 300px;
-    margin-bottom: 2.5rem;
+    max-width: 300px;
+    margin: 0 auto 2.5rem;
 }
 
 @media (min-width: 50em) {

@@ -1,10 +1,12 @@
 .site-header {
+	grid-column: 2;
 	background-color: #111;
 	color: #fff;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	position: fixed;
+	padding: 0 1rem;
 	right: 0;
 	left: 0;
 	top: 0;
@@ -21,7 +23,7 @@
 
 
 .site-branding {
-	padding: 0.2rem 1rem;
+	padding: 0.2rem 0;
 	height: 3.5rem;
 }
 
